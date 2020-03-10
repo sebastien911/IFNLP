@@ -13,7 +13,11 @@
 7. 預計於lecture 10訂出期末side project主題，7月課程結束後舉行demo day  
 
 ### 3/5 Lecture 1 (G1)
-
+   討論內容：  
+      1. Human language and word meaning  
+      2. Word2vec introduction(core concepts, network structure, objective function, gradient descent)  
+      3. Semantics in word vectors  
+      4. Illustration of hierarchical softmax(ref:https://www.quora.com/What-is-hierarchical-softmax ->感謝昌哥補充)  
 ### 3/12 Lecture 2 & HW 1(G2)
 ### 3/19 Lecture 3(G3)
 ### 3/26 Lecture 4 & HW 2(G1)
