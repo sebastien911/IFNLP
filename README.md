@@ -4,7 +4,7 @@
 1. 課程網頁(2019 winter)https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1194/  
 2. youtube播放清單https://www.youtube.com/playlist?list=PLoROMvodv4rOhcuXMZkNm7j3fVwBBY42z  
 3. 分組名單—  
-   G1: 潔熹、宗聖、名傑、宜昌
+   G1: 潔熹、宗聖、名傑、宜昌  
    G2: 子珊、志中、珮玲、克成、育銓  
    G3: 忠毅、宛誼、鈺瑋、佩璇  
 4. 讀書會時間地點：2020年3月~7月，每週四1730-1830@12B多功能會議室
