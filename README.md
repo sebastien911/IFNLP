@@ -23,8 +23,8 @@
       1. Review on word2vec and optimization method(GD/SGD)  
       2. The construction of co-occurrence matrix and its implication  
       3. How to utilize the co-occurrence matrix to construct word vectors?:  
-         i. SVD  
-         ii. GloVe  
+           i. SVD  
+           ii. GloVe  
       4. GloVe introduction(rationale, the difference with word2vec, objective function setup)  
       5. Evaluation Method (intrisic vs extrinsic)  
       6. What to do when word sense ambiguity occurs?  
