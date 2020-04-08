@@ -13,8 +13,19 @@
 7. 預計於lecture 10訂出期末side project主題，7月課程結束後舉行demo day  
 
 ### 3/5 Lecture 1 (G1)
-
+   討論內容：  
+      1. Human language and word meaning  
+      2. Word2vec introduction(core concepts, network structure, objective function, gradient descent)  
+      3. Semantics in word vectors  
+      4. Illustration of hierarchical softmax(ref:https://www.quora.com/What-is-hierarchical-softmax ->感謝昌哥補充)  
 ### 3/12 Lecture 2 & HW 1(G2)
+   討論內容：  
+      1. Review on word2vec and optimization method (GD/SGD)  
+      2. The construction of co-occurrence matrix and its implication  
+      3. How to utilize the co-occurrence matrix to construct word vectors?: i) SVD ii) GloVe  
+      4. GloVe introduction (rationale, the difference with word2vec, objective function setup)  
+      5. Evaluation Method (intrisic vs extrinsic)  
+      6. What to do when word sense ambiguity occurs?  
 ### 3/19 Lecture 3(G3)
 ### 3/26 Lecture 4 & HW 2(G1)
 ### 4/2 Lecture 5(G2)
