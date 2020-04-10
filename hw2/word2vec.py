@@ -57,14 +57,19 @@ def naiveSoftmaxLossAndGradient(
     ### Please use the provided softmax function (imported earlier in this file)
     ### This numerically stable implementation helps you avoid issues pertaining
     ### to integer overflow. 
+
+    # 要注意vector shape!!!!!
+    # outside->(N,V) center->(V,)
+    # 假設 N words, V dimentions
+
     tmp = np.dot(outsideVectors, centerWordVec) 
-    y_hat  = softmax(tmp)
-    loss = -np.log(y_hat[outsideWordIdx])
+    y_hat  = softmax(tmp) #(N,1)
+    loss = -np.log(y_hat[outsideWordIdx]) #(1,)
 
     d_tmp = y_hat
     d_tmp[outsideWordIdx] = d_tmp[outsideWordIdx]-1
-    gradCenterVec   = outsideVectors.T.dot(d_tmp) 
-    gradOutsideVecs = d_tmp[:, np.newaxis].dot(np.array([centerWordVec]) ) 
+    gradCenterVec   = outsideVectors.T.dot(d_tmp) #(V,)
+    gradOutsideVecs = d_tmp[:, np.newaxis].dot(np.array([centerWordVec]) ) #（N,V）
 
 
     ### END YOUR CODE
@@ -111,24 +116,37 @@ def negSamplingLossAndGradient(
     indices = [outsideWordIdx] + negSampleWordIndices
 
     ### YOUR CODE HERE
-    o_vector = outsideVectors[outsideWordIdx]
-    neg_vector = outsideVectors[negSampleWordIndices]
     ### Please use your implementation of sigmoid in here.
-    value_outside  = o_vector.dot(centerWordVec)
-    value_negative = neg_vector.dot(centerWordVec)
+    gradCenterVec = np.zeros(centerWordVec.shape)
+    gradOutsideVecs = np.zeros(outsideVectors.shape)
+    loss = 0.0
 
-    p_outside  = sigmoid(value_outside)
-    p_negative = sigmoid(-value_negative)
+    # recall naive softmax loss function: J(o,c,U)= -log(exp(U_o.T * V_c)/∑exp(U_w.T * V_c))
+    # recall neg-sample loss function: J(o,c,U)= -log(sigmoid(U_o.T * V_c)) -∑log(sigmoid(- U_k.T * V_c))
 
-    loss = - (np.log(p_outside) + np.sum(np.log(p_negative)) )
-    gradCenterVec = (p_outside - 1) * o_vector + np.sum((1 - p_negative)[:, np.newaxis] * neg_vector, axis = 0)
+    # forward for outsideVec
+    y_hat = sigmoid(np.dot(outsideVectors, centerWordVec))
+    loss += -np.log(y_hat[outsideWordIdx])
 
-    gradOutsideVecs = np.zeros_like(outsideVectors)
-    gradOutsideVecs[outsideWordIdx] = (p_outside - 1) * centerWordVec
-    for i, neg_index in enumerate(negSampleWordIndices):
-        gradOutsideVecs[neg_index] += (1 - p_negative[i]) * centerWordVec # remember negative can appear multiple times
+    # backprop for outsideVec
+    y_hat[outsideWordIdx] -= 1
+    gradCenterVec += outsideVectors[outsideWordIdx] * y_hat[outsideWordIdx]
+    gradOutsideVecs[outsideWordIdx] += centerWordVec * y_hat[outsideWordIdx]
 
+    # 第一個部分只有 outside vec Uo and center vec Vc, 
+    # 所以不用包含整個outside vec
 
+    # backprop for k negative samples
+    for k in range(len(indices)):
+        if indices[k] == outsideWordIdx:
+            continue
+        else:
+            neg_id = indices[k]
+            y_hat_k = sigmoid(-np.dot(outsideVectors[neg_id], centerWordVec))
+            loss -= np.log(y_hat_k)
+            gradCenterVec -= outsideVectors[neg_id] * (y_hat_k-1)
+            gradOutsideVecs[neg_id] -= centerWordVec * (y_hat_k-1）
+            
     ### END YOUR CODE
 
     return loss, gradCenterVec, gradOutsideVecs
@@ -175,8 +193,7 @@ def skipgram(currentCenterWord, windowSize, outsideWords, word2Ind,
     outsideWordIndices = [word2Ind[i] for i in outsideWords]
 
     for outsideWordIdx in outsideWordIndices:
-        one_loss, one_gradCenter, one_gradOutside = \
-            word2vecLossAndGradient(centerWordVec, outsideWordIdx, outsideVectors, dataset) 
+        one_loss, one_gradCenter, one_gradOutside = word2vecLossAndGradient(centerWordVec, outsideWordIdx, outsideVectors, dataset) 
         loss += one_loss
         gradCenterVecs[centerWordIdx] += one_gradCenter
         gradOutsideVectors += one_gradOutside
