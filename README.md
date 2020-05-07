@@ -30,3 +30,9 @@
 ### 3/26 Lecture 4 & HW 2(G1)
 ### 4/2 Lecture 5(G2)
 ### 4/9 Lecture 6 & HW 3(G3)
+### 5/7 Lecture 7 
+   補充資料：  
+      1. LSTM中文圖解 https://zhuanlan.zhihu.com/p/32085405  
+      2. GRU中文圖解 https://zhuanlan.zhihu.com/p/32481747  
+      3. RNN/LSTM/GRU圖文並茂解說(動畫版)https://towardsdatascience.com/illustrated-guide-to-lstms-and-gru-s-a-step-by-step-explanation-44e9eb85bf21  
+      4. ResNet, HighwayNets, DenseNet https://chatbotslife.com/resnets-highwaynets-and-densenets-oh-my-9bb15918ee32  
