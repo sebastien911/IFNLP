@@ -50,7 +50,10 @@ class ModelEmbeddings(nn.Module):
         ### Use the following docs to properly initialize these variables:
         ###     Embedding Layer:
         ###         https://pytorch.org/docs/stable/nn.html#torch.nn.Embedding
-        
+        self.source = nn.Embedding(len(vocab.src), embed_size, padding_idx=src_pad_token_idx)
+        self.target = nn.Embedding(len(vocab.tgt), embed_size, padding_idx=tgt_pad_token_idx)
+        # note: 也就是说，当Embedding是随机初始化的矩阵时，会对padding_idx所在的行进行填0。保证了padding行为的正确性。
+        #       还需要保证一个问题，就是在反向回传的时候，padding_idx是不会更新的.        
 
         ### END YOUR CODE
 
