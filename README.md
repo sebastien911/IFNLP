@@ -36,3 +36,9 @@
       2. GRU中文圖解 https://zhuanlan.zhihu.com/p/32481747  
       3. RNN/LSTM/GRU圖文並茂解說(動畫版)https://towardsdatascience.com/illustrated-guide-to-lstms-and-gru-s-a-step-by-step-explanation-44e9eb85bf21  
       4. ResNet, HighwayNets, DenseNet https://chatbotslife.com/resnets-highwaynets-and-densenets-oh-my-9bb15918ee32  
+
+### QA模型延伸閱讀
+https://zhuanlan.zhihu.com/p/27151397  
+https://zhuanlan.zhihu.com/p/63502183  
+### Transformer延伸閱讀  
+https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html  
