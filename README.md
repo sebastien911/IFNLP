@@ -38,7 +38,6 @@
       4. ResNet, HighwayNets, DenseNet https://chatbotslife.com/resnets-highwaynets-and-densenets-oh-my-9bb15918ee32  
 
 ### QA模型延伸閱讀
-BiDAF http://www.shuang0420.com/2018/04/01/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%20-%20Bi-Directional%20Attention%20Flow%20for%20Machine%20Comprehension/  
 DCN https://zhuanlan.zhihu.com/p/27151397  
 BiDAF, DCN https://zhuanlan.zhihu.com/p/63502183  
 ### Transformer延伸閱讀  
