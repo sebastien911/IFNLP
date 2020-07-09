@@ -41,4 +41,8 @@
 DCN https://zhuanlan.zhihu.com/p/27151397  
 BiDAF, DCN https://zhuanlan.zhihu.com/p/63502183  
 ### Transformer延伸閱讀  
-https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html  
+Google Blog: https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html  
+圖文並茂逐步驟拆解說明(英文版) http://jalammar.github.io/illustrated-transformer/  
+李宏毅生動影片與筆記 https://www.youtube.com/watch?v=ugWDIIOHtPA 、https://hackmd.io/@abliu/BkXmzDBmr    
+
+   討論內容：  
