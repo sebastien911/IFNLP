@@ -45,4 +45,5 @@ Google Blog: https://ai.googleblog.com/2017/08/transformer-novel-neural-network.
 圖文並茂逐步驟拆解說明(英文版) http://jalammar.github.io/illustrated-transformer/  
 李宏毅生動影片與筆記 https://www.youtube.com/watch?v=ugWDIIOHtPA 、https://hackmd.io/@abliu/BkXmzDBmr    
 
-   討論內容：  
+### 作業參考實作內容
+高手Github repo參考: https://github.com/Luvata/CS224N-2019/tree/master/Assignment  
